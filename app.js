@@ -102,10 +102,8 @@ function createHours() {
         tableCol.appendChild(tr)
         tr.appendChild(td)
         Object.keys(program).map((key, index) => {
-            // console.log(getActivity(key, hours[i]))
             var td2 = document.createElement("td");
             td2.innerHTML = getActivity(key, hours[i].hour)
-            // td2.addEventListener("dblclick", dbClick)
             td2.day = program[key].day;
             td2.dayid = program[key]._id;
             td2.ondrop = drop.bind(null, td2);
@@ -126,13 +124,7 @@ function createDays() {
 }
 
 function reloadActivities() {
-
-    // let element = document.getElementById("activities");
-    // while (element.firstChild) {
-    //     element.removeChild(element.firstChild);
-    // } 
-
-    console.log(activityList.children)
+ 
     let acList = [];
     Object.keys(activityList.children).map((key, index) => {
         acList.push(activityList.children[key].activityName)
@@ -151,8 +143,6 @@ function reloadActivities() {
             li.style.cursor = "pointer";
             li.classList.add("list-group-item");
             li.classList.add("activities");
-            // li.addEventListener("click", selectActivity.bind(null, li))
-            // li.addEventListener("dblclick", deleteActivity.bind(null, li.id))
             li.draggable = true;
             li.ondragstart = drag.bind(li);
             activityList.appendChild(li)
