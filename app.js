@@ -135,7 +135,7 @@ function reloadActivities() {
             let li = document.createElement('li')
             let btn = document.createElement('button')
             btn.classList.add("btn", "btn-danger", "right")
-            btn.innerHTML = "Sil"
+            btn.innerHTML = "Delete"
             li.innerText = activity.name;
             li.activityName = activity.name;
             li.id = activity._id;
